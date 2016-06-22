@@ -1,0 +1,15 @@
+def odd(n,m,z):
+    print n,m,z
+    if(n|m|z==True):
+        if((n&m==True)|((m&z)==True)|((n&z)==True)):
+            print "false"
+        else:
+            print "true"
+        
+    else:
+        print "false"
+        
+a=True
+b=False
+c=True
+odd(bool(a),bool(b),bool(c))

@@ -1,0 +1,4 @@
+this folder contains all the faces that needs to be compared against.
+It stores the image caputred from captureimage.py module.
+All faces will have name as USN appended with the current time stamp for making each face unique.
+Its expected that there should be more then 5 face of single person in different expressions for better accuracy.

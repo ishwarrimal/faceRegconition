@@ -1,0 +1,7 @@
+Desccription of the folders:
+
+1. database: is the permanant database of students face.
+2. duplicate database: faces i used for my project.
+3. info: contains a text file of informtaion once the program is executed.
+4. pyfacesdemo :inbuilt file contians many modues for face comparison.
+5. temp: contains the temperory database. And the database is emptied each time the program is run.

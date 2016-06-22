@@ -1,0 +1,102 @@
+import numpy as np
+
+import os, os.path
+
+import cv2.cv as cv
+
+import cv2
+
+import traceback
+
+import subprocess
+
+import sys
+
+#directory storing the files in temp database
+DIR1='c:/python27/face/temp/'
+
+#directory fetching the previous stored output
+DIR2='c:/wamp/www/attendance/pyoutput/'
+
+#directory to store the output temperory
+DIR3='c:/python27/face/info/'
+
+#counting the no of files in temp database
+num1=len([name for name in os.listdir(DIR1) if os.path.isfile(os.path.join(DIR1,name))])
+
+#counting the no of files of previous output
+num2=len([name for name in os.listdir(DIR2) if os.path.isfile(os.path.join(DIR2,name))])
+
+num3=len([name for name in os.listdir(DIR3) if os.path.isfile(os.path.join(DIR3,name))])
+
+def function():
+
+    #path of localserver directory for brwoser to update the database using webpage
+    f="c:/wamp/www/attendance/pyoutput/input.txt"
+
+    f1 = open(f,'w')
+
+    #send the output to the wamp directory
+    for i in range(1,num1+1):
+        
+        file1="c:/python27/face/info/"+str(i)+".txt"
+
+        img=str(i)+".png"
+
+        #os.system("cd/")
+
+        #os.system("cd c:/python27/face/")
+
+	#main.py inside pyfacesdemo is used to execute the program where we are givign the input as each file in temperory database.
+        cmd="python c:/python27/face/pyfacesdemo/main.py c:/python27/face/temp/"+img+" c:/python27/face/database/ 6 2 "
+
+        os.system(cmd+" >"+file1)
+
+        file2 = open(file1, 'r')
+            
+        data=file.read(file2)
+
+        thres=data.split()
+
+        thres1=str(thres[0])
+        
+        #usn=thres1[26:29]
+
+        #song="c:/python27/face/"+usn+".mp3"
+
+        #os.startfile(song)
+
+        usn=data[29:36]
+
+        thres=data.split()
+
+        thres1=float(thres[1])
+
+	#if threshold is less then .5 treat it as detected face
+        if thres1 < 0.5:
+
+            f1.write(usn+'\n')
+                
+            os.rename("c:/python27/face/temp/"+str(i)+".png","c:/wamp/www/attendance/detected/"+str(i)+".png")
+
+        else:
+            #code to automatically remove the images from undetected folder
+            #filelist = [ f for f in os.listdir("c:/wamp/www/attendance/undetected/") if f.endswith(".png") ]
+            #for f in filelist:
+             #   os.remove(f)    
+
+            os.rename("c:/python27/face/temp/"+str(i)+".png","c:/wamp/www/attendance/undetected/"+str(i)+".png")
+           
+    f1.close()
+
+
+
+if __name__=="__main__":
+
+    for i in range(1,num3+1):
+
+        os.remove("c:/python27/face/info/1.txt")
+
+    function();
+
+        
