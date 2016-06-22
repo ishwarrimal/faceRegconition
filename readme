@@ -1,0 +1,49 @@
+ 				AUTOMATIC ATTENDANCE MANAGEMENT USING FACE RECOGNITION
+
+This is my engineering final year project.
+This project is developed to change the traditional system of taking attendance thus making it efficient and accurate at the same time using OPEN CV.
+
+Description of the project:
+
+Initially at the begining of the semister, multiple faces with various facial expressions of individual students are saved in a database of the class.
+There will be a high defination camera installed in each class along with a computer which can operate that.
+Each hour/period the faculty needs to run the main program in the system, authenticate and then log in.
+The username is given in such a way that it describes the follwoing : first 6 charcted the name of database and the 7th onwards is the subject code.
+Once logged in, faculty can give a command to click the picture of the class at any time he/she wishes uisng the UI.
+Once clicked, it will show the number of faces detected. Once the faculty agrees to the number of faces, he/she can give a command to proceed further.
+The program then comapres the faces with the ones already present and sends the result to the localhost, for further processing.
+PHP is used in the server to update the database.
+
+#NOTE:it is requested to copy this project inside python folder(where python is installed)
+
+Description of the environment I have run this project:
+1. windows 7 32 bit.
+2. WAMP server.
+3. python 2.7
+
+python plugins requried:
+1. numpy
+2. Tkinter
+3. CV2
+4. CV
+5. and others as well, look at the header files in each program and dowload those plugins.
+
+This directory contains the following folders and files
+
+folders: 
+1. eigenfaces, reconfaces: this folder will contain the intermediate faces after comarison. Auto generated.
+2. face: User defined directory storing the database of faces and other modules for comparison.
+3. haarcascades: this contains all the algorithm needed for comparion (this case we used just face comparison algorithm)
+4. include, lib, libs, Scripts, share, tcl, tools: inbuild python files.
+
+files:
+
+1. firstpage.py: this is the main program you need to run. It contains GUI elements for your ease. Rest all the modules are called using GUI.
+2. capture_group_image.py: this program is used to capture the group image( when called by the main program)
+3. face.py: Detect and crop the faces.
+4. faceRecognition.py : for face recognition.
+5. facultyLogin.py: module for faculty to log in and enter credentials.
+6. resize.py: to resize the cropped image.
+
+Rest all files doesnot have much effect, but better dont delete.
+
