@@ -6,13 +6,17 @@ This project is developed to change the traditional system of taking attendance 
 Description of the project:
 
 In the begining of the semister, multiple faces with various facial expressions of individual students are saved in a database of the class.
-There will be a high defination camera installed in each class along with a computer which can operate that.
+There will be a high defination camera installed in each class along with a computer which can operate it.
 Each hour/period the faculty needs to run the main program in the system, authenticate and then log in.
 The username is given in such a way that it describes the follwoing : first 6 charcted the name of database and the 7th onwards is the subject code.
 Once logged in, faculty can give a command to click the picture of the class at any time he/she wishes uisng the UI.
 Once clicked, it will show the number of faces detected. Once the faculty agrees to the number of faces, he/she can give a command to proceed further.
 The program then comapres the faces with the ones already present and sends the result to the localhost, for further processing.
 PHP is used in the server to update the database.
+
+Once this is done, you need to trigger PHP code to read the generated file, and update the db with attendance.
+
+*you need to write the PHP code on your own*
 
 #NOTE:it is requested to copy this project inside python folder(where python is installed)
 
